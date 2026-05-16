@@ -16,6 +16,19 @@
     }
   },
   "logs_store": {
-    "enabled": false
+    "enabled": true,
+    "type": "postgres",
+    "config": {
+      "host": "env.PG_HOST",
+      "port": "env.PG_PORT",
+      "user": "env.PG_USER",
+      "password": "env.PG_PASSWORD",
+      "db_name": "env.PG_DB",
+      "ssl_mode": "env.PG_SSL_MODE",
+      "max_idle_conns": 2,
+      "max_open_conns": 5,
+      "matview_refresh_interval": "5m"
+    },
+    "retention_days": 30
   }
 }
