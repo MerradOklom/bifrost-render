@@ -2,6 +2,7 @@ services:
   - type: web
     name: bifrost
     runtime: docker
+    plan: free
     dockerfilePath: ./render/Dockerfile
     healthCheckPath: /health
     envVars:
