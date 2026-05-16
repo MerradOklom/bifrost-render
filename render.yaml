@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: bifrost
+    runtime: docker
+    dockerfilePath: ./render/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: APP_DIR
+        value: /app/render-data
+      - key: APP_HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: "10000"
+      - key: APP_PORT
+        value: "10000"
+      - key: PG_PORT
+        value: "5432"
+      - key: PG_DB
+        value: postgres
+      - key: PG_SSL_MODE
+        value: require
+      - key: BIFROST_ENCRYPTION_KEY
+        sync: false
+      - key: PG_HOST
+        sync: false
+      - key: PG_USER
+        sync: false
+      - key: PG_PASSWORD
+        sync: false
