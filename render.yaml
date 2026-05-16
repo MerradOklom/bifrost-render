@@ -3,6 +3,7 @@ services:
     name: bifrost
     runtime: docker
     plan: free
+    region: virginia
     dockerfilePath: ./render/Dockerfile
     healthCheckPath: /health
     envVars:
@@ -14,6 +15,8 @@ services:
         value: "10000"
       - key: APP_PORT
         value: "10000"
+      - key: TZ
+        value: America/Argentina/Buenos_Aires
       - key: PG_PORT
         value: "5432"
       - key: PG_DB
